@@ -1,0 +1,31 @@
+.main-container {
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.main-div{
+    width:40%;
+    background-color:blueviolet;
+    height:300px;
+    text-align: center;
+}
+#number {
+    width:250px;
+    height:25px;
+    padding:5px;
+    border-radius: 10px;
+}
+label{
+    font-size:1.3rem;
+    color:tomato;
+}
+#submit {
+    padding:5px;
+    color:red;
+    border-radius: 10px;
+}
+#submit:hover {
+    opacity:0.5;
+    cursor:pointer;
+}
