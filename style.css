@@ -29,3 +29,7 @@ label{
     opacity:0.5;
     cursor:pointer;
 }
+.large-text{
+    font-size:1.2rem;
+    font-weight:bold;
+}

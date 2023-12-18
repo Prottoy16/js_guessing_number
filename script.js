@@ -20,29 +20,51 @@
 
 const para1=document.querySelector(".para1");
 const para2=document.querySelector(".para2");
+
 const para3=document.querySelector(".para3");
+para3.classList.add("large-text");
 
-
+let totalAttempts=0;
+let totalWon=0;
+let totalLost=0;
 const form=document.querySelector("form");
 const Number=form.querySelector("#number");
+const submitButton=form.querySelector("#submit");
+
+
 
 
     form.addEventListener("submit",(e)=>{
         e.preventDefault();
+        totalAttempts++;
+       
         const RandomNumber=Math.floor(Math.random()*5)+1;
-        const typeValue=Number.value;
-        console.log(typeValue);
-        for(let i=0;i<5;i++){
-            
-        }
+        let typeValue=Number.value;
         
+        
+        if(totalAttempts===5){
+            Number.disabled=true;
+            submitButton.disabled= true;
+        }
+        if(totalAttempts<6){
             if(RandomNumber==typeValue){
                 para1.innerHTML="You have won";
+                totalWon++;
               }
               else {
                  para1.innerHTML=`You have lost. Random number was ${RandomNumber}`;
+                 totalLost++;
               }
+        }
+      
         
-       
+        para2.innerHTML=`total remaining attempts : ${5-totalAttempts}`;
+        para3.innerHTML=`total won:${totalWon} , total lost:${totalLost} `;
+     
+        
+
+        Number.value="";
+
+        
        })
 
